@@ -123,7 +123,7 @@ print(f"📂 Looking for model at: {model_path}")
 if not os.path.exists(model_path):
     st.error(f"❌ Model not found at: {model_path}")
     st.info("Please run 'python train_shap_model.py' first to create the model files.")
-    return None, None, None
+return None, None, None
     
     try:
         model = joblib.load(model_path)
