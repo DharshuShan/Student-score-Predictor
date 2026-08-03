@@ -113,17 +113,16 @@ def load_model_and_scaler():
     Load the trained model, scaler, and feature columns.
     Uses @st.cache_resource so it only loads once.
     """
+    model_path = "/Users/dharsh/Documents/Thesis/SHAP Model/final_exam_model.pkl"
+    scaler_path = "/Users/dharsh/Documents/Thesis/SHAP Model/robust_scaler.pkl"
+    columns_path = "/Users/dharsh/Documents/Thesis/SHAP Model/model_columns.pkl"
     
-model_path = "/Users/dharsh/Documents/Thesis/SHAP Model/final_exam_model.pkl"
-scaler_path = "/Users/dharsh/Documents/Thesis/SHAP Model/robust_scaler.pkl"
-columns_path = "/Users/dharsh/Documents/Thesis/SHAP Model/model_columns.pkl"
+    print(f"📂 Looking for model at: {model_path}")
     
-print(f"📂 Looking for model at: {model_path}")
-    
-if not os.path.exists(model_path):
-    st.error(f"❌ Model not found at: {model_path}")
-    st.info("Please run 'python train_shap_model.py' first to create the model files.")
-return None, None, None
+    if not os.path.exists(model_path):
+        st.error(f"❌ Model not found at: {model_path}")
+        st.info("Please run 'python train_shap_model.py' first to create the model files.")
+        return None, None, None
     
     try:
         model = joblib.load(model_path)
@@ -143,7 +142,6 @@ return None, None, None
 @st.cache_data
 def load_dataset():
     """Load the student dataset."""
-    
     dataset_path = os.path.join(SCRIPT_DIR, 'student_digital_life.csv')
     print(f"📂 Looking for dataset at: {dataset_path}")
     
@@ -197,7 +195,6 @@ def time_input_combined(label, max_hours, default_hours, key_prefix):
     Create time input with hours and minutes in a single combined input
     Uses a dropdown for minutes with 5, 10, or 15 min increments
     """
-    
     default_hrs = int(default_hours)
     default_mins = int((default_hours - default_hrs) * 60)
     
@@ -240,7 +237,6 @@ def time_input_with_15min(label, max_hours, default_hours, key_prefix):
     """
     Alternative: Time input with 15-minute increments only
     """
-    
     default_hrs = int(default_hours)
     default_mins = int((default_hours - default_hrs) / 0.25) * 15  # Round to nearest 15 min
     if default_mins >= 60:
