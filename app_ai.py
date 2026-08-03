@@ -113,9 +113,9 @@ def load_model_and_scaler():
     Load the trained model, scaler, and feature columns.
     Uses @st.cache_resource so it only loads once.
     """
-    model_path = "/Users/dharsh/Documents/Thesis/SHAP Model/final_exam_model.pkl"
-    scaler_path = "/Users/dharsh/Documents/Thesis/SHAP Model/robust_scaler.pkl"
-    columns_path = "/Users/dharsh/Documents/Thesis/SHAP Model/model_columns.pkl"
+    model_path = os.path.join(BASE_DIR, "final_exam_model.pkl")
+    scaler_path = os.path.join(BASE_DIR, "robust_scaler.pkl")
+    columns_path = os.path.join(BASE_DIR, "model_columns.pkl")
     
     print(f"📂 Looking for model at: {model_path}")
     
