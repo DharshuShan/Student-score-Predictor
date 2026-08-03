@@ -13,7 +13,7 @@ from sklearn.preprocessing import RobustScaler
 # Load dataset
 # -----------------------------------
 
-file_path = "/Users/dharsh/Documents/Thesis/SHAP Model/student_digital_life.csv"
+file_path = os.path.join(BASE_DIR, "student_digital_life.csv")
 
 df = pd.read_csv(file_path)
 
