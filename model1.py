@@ -3,12 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
+import os
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from sklearn.preprocessing import RobustScaler
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # -----------------------------------
 # Load dataset
 # -----------------------------------
