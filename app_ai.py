@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 warnings.filterwarnings('ignore')
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ============================================================
 # PAGE CONFIGURATION
 # ============================================================
