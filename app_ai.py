@@ -118,7 +118,7 @@ model_path = "/Users/dharsh/Documents/Thesis/SHAP Model/final_exam_model.pkl"
 scaler_path = "/Users/dharsh/Documents/Thesis/SHAP Model/robust_scaler.pkl"
 columns_path = "/Users/dharsh/Documents/Thesis/SHAP Model/model_columns.pkl"
     
-    print(f"📂 Looking for model at: {model_path}")
+print(f"📂 Looking for model at: {model_path}")
     
     if not os.path.exists(model_path):
         st.error(f"❌ Model not found at: {model_path}")
