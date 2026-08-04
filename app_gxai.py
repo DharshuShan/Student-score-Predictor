@@ -755,7 +755,7 @@ def prediction_page():
                 'internet_quality': internet
             }
             
-            if st.button("🔮 Predict Score!", width="stretch"):
+            if st.button("🔮 Predict Score!"):
                 with st.spinner("Analyzing student data..."):
                     score = predict_score(student_data)
                     
