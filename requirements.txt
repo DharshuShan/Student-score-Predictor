@@ -9,6 +9,7 @@ streamlit==1.58.0
 # ------------------- Data Processing -------------------
 pandas==2.3.3
 numpy==1.25.2
+python==3.11.8
 
 # ------------------- Machine Learning -------------------
 scikit-learn==1.8.0
