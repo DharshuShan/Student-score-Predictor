@@ -1062,7 +1062,7 @@ def challenges_page():
     # Challenge Menu
     if st.session_state.selected_challenge is not None:
         # Back button
-        if st.button("⬅️ Back to Challenges Menu", width="stretch"):
+        if st.button("⬅️ Back to Challenges Menu"):
             st.session_state.selected_challenge = None
             st.rerun()
         
