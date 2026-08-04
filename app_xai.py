@@ -29,6 +29,7 @@ import shap
 from sklearn.inspection import partial_dependence
 warnings.filterwarnings('ignore')
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ============================================================
 # PAGE CONFIGURATION
 # ============================================================
@@ -138,9 +139,9 @@ print(f"📂 Script directory: {SCRIPT_DIR}")
 def load_model_and_scaler():
     """Load Model 2, scaler, and feature columns"""
 
-    model_path = '/Users/dharsh/Documents/Thesis/SHAP Model/final_exam_model1.pkl'
-    scaler_path = '/Users/dharsh/Documents/Thesis/SHAP Model/robust_scaler1.pkl'
-    columns_path = '/Users/dharsh/Documents/Thesis/SHAP Model/model_columns1.pkl'
+    model_path = os.path.join(BASE_DIR, "final_exam_model1.pkl")
+    scaler_path = os.path.join(BASE_DIR, "robust_scaler1.pkl")
+    columns_path = os.path.join(BASE_DIR, "model_columns1.pkl")
 
     print(f"📂 Looking for model at: {model_path}")
 
