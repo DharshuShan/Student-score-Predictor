@@ -254,7 +254,7 @@ def load_model_and_scaler():
 @st.cache_data
 def load_dataset():
     """Load the student dataset"""
-    dataset_path = '/Users/dharsh/Documents/Thesis/SHAP Model/student_digital_life.csv'
+    dataset_path = os.path.join(BASE_DIR, "student_digital_life.csv")
     
     if not os.path.exists(dataset_path):
         return None
