@@ -1095,7 +1095,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +30 points per correct answer</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🎯 Start PDP Quiz", key="btn_quiz", width="stretch"):
+        if st.button("🎯 Start PDP Quiz", key="btn_quiz"):
             st.session_state.selected_challenge = "PDP Quiz"
             st.rerun()
         
@@ -1107,7 +1107,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +20 points per comparison</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🔬 Compare Features", key="btn_features", width="stretch"):
+        if st.button("🔬 Compare Features", key="btn_features"):
             st.session_state.selected_challenge = "Compare Features"
             st.rerun()
         
@@ -1119,7 +1119,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +30 points per comparison</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("👥 Compare Students", key="btn_students", width="stretch"):
+        if st.button("👥 Compare Students", key="btn_students"):
             st.session_state.selected_challenge = "Compare Students"
             st.rerun()
     
@@ -1132,7 +1132,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +100+ bonus points</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🚀 Start Challenge", key="btn_challenge", width="stretch"):
+        if st.button("🚀 Start Challenge", key="btn_challenge"):
             st.session_state.selected_challenge = "Challenge Mode"
             st.rerun()
         
@@ -1144,7 +1144,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +25 points</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("🌍 Generate Global Analysis", key="btn_global", width="stretch"):
+        if st.button("🌍 Generate Global Analysis", key="btn_global"):
             st.session_state.selected_challenge = "Global Analysis"
             st.rerun()
         
@@ -1156,7 +1156,7 @@ def challenges_page():
             <p style="color: #666; font-size: 0.9rem;">🏆 +20 points</p>
         </div>
         """, unsafe_allow_html=True)
-        if st.button("📊 Show Feature Importance", key="btn_importance", width="stretch"):
+        if st.button("📊 Show Feature Importance", key="btn_importance"):
             st.session_state.selected_challenge = "Feature Importance"
             st.rerun()
 
