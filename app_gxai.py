@@ -720,7 +720,7 @@ def prediction_page():
             st.markdown("</div>", unsafe_allow_html=True)
             
             st.warning("⚠️ Please adjust hours to be within 24 hours.")
-            st.button("🔮 Predict Score!", width="stretch", disabled=True)
+            st.button("🔮 Predict Score!", disabled=True)
         else:
             st.success(f"✅ **Valid schedule!** Total: {format_hours(total_hours)} / 24h")
             st.caption(f"Remaining: {format_hours(24 - total_hours)}")
@@ -1231,7 +1231,7 @@ def show_pdp_quiz_page():
             add_achievement("🧠 Quiz Master")
             st.success("🏆 Achievement Unlocked: Quiz Master!")
         
-        if st.button("🔄 Start New Quiz", width="stretch"):
+        if st.button("🔄 Start New Quiz"):
             st.session_state.quiz_shuffled = []
             st.session_state.quiz_current_index = 0
             st.session_state.quiz_answered = False
@@ -1275,7 +1275,7 @@ def show_pdp_quiz_page():
                 else:
                     st.info(option)
             else:
-                if st.button(option, key=f"pdp_opt_{current_idx}_{i}", width="stretch"):
+                if st.button(option, key=f"pdp_opt_{current_idx}_{i}"):
                     st.session_state.quiz_selected = option
                     st.session_state.quiz_answered = True
                     
@@ -1295,7 +1295,7 @@ def show_pdp_quiz_page():
     # Next question button
     if st.session_state.quiz_answered:
         if len(st.session_state.quiz_asked_indices) < len(questions):
-            if st.button("➡️ Next Question", width="stretch"):
+            if st.button("➡️ Next Question"):
                 next_idx = None
                 for i in range(len(questions)):
                     if i not in st.session_state.quiz_asked_indices:
@@ -1353,7 +1353,7 @@ def show_feature_comparison_page():
         feat2 = st.selectbox("Select second feature:", available_features, key="feat2_compare")
     
     if feat1 != feat2:
-        if st.button("📈 Generate SHAP Dependence Plot", width="stretch"):
+        if st.button("📈 Generate SHAP Dependence Plot"):
             with st.spinner("Generating SHAP dependence plot..."):
                 try:
                     sample_df = df_full.sample(n=300, random_state=42).copy()
@@ -1461,7 +1461,7 @@ def show_student_comparison_page():
         attendance_b = st.slider("Attendance % (B)", 0, 100, 70, key="comp_att_b")
         assignments_b = st.slider("Assignments % (B)", 0, 100, 65, key="comp_assign_b")
     
-    if st.button("👥 Compare Students", width="stretch"):
+    if st.button("👥 Compare Students"):
         student_a = {
             'study_hours_per_day': study_a,
             'sleep_hours': sleep_a,
@@ -1617,7 +1617,7 @@ def show_challenge_mode_page():
         attendance = st.slider("Attendance %", 0, 100, 85, key="chall_att")
         assignments = st.slider("Assignments %", 0, 100, 80, key="chall_assign")
     
-    if st.button("🎯 Submit Challenge", width="stretch"):
+    if st.button("🎯 Submit Challenge"):
         student = {
             'study_hours_per_day': study,
             'sleep_hours': sleep,
